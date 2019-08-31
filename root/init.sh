@@ -20,12 +20,16 @@ fi
 
 echo "[DONE]"
 
-echo "Setting owner and permissions"
+#echo "Setting owner and permissions"
 
-chown -R $UID:$GID /config
-find /config -type d -exec chmod 755 {} +
-find /config -type f -exec chmod 644 {} +
+#chown -R $UID:$GID /config
+#find /config -type d -exec chmod 755 {} +
+#find /config -type f -exec chmod 644 {} +
 
+#echo "[DONE]"
+
+echo "Setting umask to 0000"
+umask 0000
 echo "[DONE]"
 
 echo "Starting aria2c"
