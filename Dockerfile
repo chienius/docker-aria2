@@ -4,6 +4,7 @@ MAINTAINER OpenGG <liy099@gmail.com>
 COPY root/ /
 
 RUN set -xe \
+    && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
     && apk add --no-cache aria2 \
     && chmod +x /init.sh
 
